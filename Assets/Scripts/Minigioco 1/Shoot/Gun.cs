@@ -8,11 +8,17 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
 
+    void Start()
+    {
+        //muzzleFlash = GetComponent<ParticleSystem>();
+        //muzzleFlash.enableEmission = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
         //Quando si preme il tasto destro per sparare
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire2"))
         {
             shoot();
         }
@@ -20,7 +26,8 @@ public class Gun : MonoBehaviour
 
     //sparo con raycast, si fa il controllo se si prende qualcosa o meno
     void shoot()
-    {
+    {   
+        //if( muzzleFlash.enableEmission = false) muzzleFlash.enableEmission = true;;
         muzzleFlash.Play();
         
         RaycastHit hit; 
@@ -35,5 +42,6 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
         }
+
     }
 }
