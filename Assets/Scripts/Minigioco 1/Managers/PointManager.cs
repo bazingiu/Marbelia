@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PointManager : MonoBehaviour
 {
     public static PointManager instance;
-    [SerializeField] int points;
+
+    public Text scoreText; 
+    public Text highscoreText;
+
+    int score = 0;
+    int highscore = 0; 
 
     void Awake()
     {
@@ -12,18 +18,26 @@ public class PointManager : MonoBehaviour
 
     private void Start()
     {
-        SaveGame.SavePoints(0);
-        points = SaveGame.GetPoints();
+        highscore = SaveGame.GetHighScore();
+        scoreText.text = score.ToString() + " POINTS";
+        highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
     public void AddPoints(int pointsToAdd)
     {
-        points += pointsToAdd;
-        print(points);
+        score += pointsToAdd;
+        print(score);
+        scoreText.text = score.ToString() + " POINTS";
+        if(highscore < score)
+        {
+            highscore = score; 
+            SaveGame.SaveHighScore(highscore);
+            highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+        }
     }
 
     public void SavePoints()
     {
-        SaveGame.SavePoints(points);
+        SaveGame.SaveHighScore(highscore);
     }
 }

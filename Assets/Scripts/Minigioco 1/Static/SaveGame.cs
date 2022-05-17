@@ -2,14 +2,14 @@ using UnityEngine;
 
 public static class SaveGame
 {
-    public static void SavePoints(int Points)
+    public static void SaveHighScore(int Points)
     {
         PlayerPrefs.SetInt("POINTS", Points);
         PlayerPrefs.Save();
     }
 
-    public static int GetPoints()
+    public static int GetHighScore()
     {
         return PlayerPrefs.GetInt("POINTS");
-    }
+    }    
 }

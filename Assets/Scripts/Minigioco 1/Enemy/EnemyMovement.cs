@@ -75,6 +75,16 @@ public class EnemyMovement : MonoBehaviour
         agent.destination = player.position;
     }
 
+// Tentativo rispetto le collisioni, ho eliminato anche il box collider
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.layer == 9)
+    //     {
+    //         PlayerHealt instance = new PlayerHealt();
+    //         instance.TakeDamage(10);
+    //     }
+    // }
+
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
@@ -88,8 +98,8 @@ public class EnemyMovement : MonoBehaviour
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            
             ///End of attack code
-
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
