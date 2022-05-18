@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            PlayerHealt.instance.TakeDamage(5);
+            PlayerHealt.instance.TakeDamage(1);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

@@ -11,8 +11,8 @@ public class WaveManager : MonoBehaviour
     public class Wave
     {
         public string name;
-        public GameObject enemy; 
-        public Transform SpawnPosition;
+        public GameObject [] enemy; 
+        public Transform [] SpawnPosition;
         public int count;
         public float rate; 
     }
@@ -76,16 +76,18 @@ public class WaveManager : MonoBehaviour
         
         for( int i = 0; i < _wave.count; i++ )
         {
-            SpawnEnemy(_wave);
+            GameObject typeOfEnemy = _wave.enemy[Random.Range(0,_wave.enemy.Length)];
+            Transform spawn = _wave.SpawnPosition[Random.Range(0,_wave.SpawnPosition.Length)];
+            SpawnEnemy(typeOfEnemy, spawn);
             yield return new WaitForSeconds(1f/_wave.rate);
         }
         state = SpawnState.WAITING;
         yield break;
     }
 
-    void SpawnEnemy (Wave _wave)
+    void SpawnEnemy (GameObject enemy, Transform SpawnPosition )
     {
-        Debug.Log("Spawning Enemy: " + _wave.enemy.name);
-        Instantiate (_wave.enemy, _wave.SpawnPosition.position, _wave.SpawnPosition.rotation );
+        Debug.Log("Spawning Enemy: " + enemy.name);
+        Instantiate (enemy, SpawnPosition.position, SpawnPosition.rotation );
     }
 }
