@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     //Reference to out agent
     NavMeshAgent agent;
+    Animator animator;
 
     public Transform player;
 
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -60,6 +62,8 @@ public class Enemy : MonoBehaviour
 
     private void SearchWalkPoint()
     {
+        // Da ottimizzare
+        animator.SetBool("IsInCombactRange", false);
         //Calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -71,12 +75,14 @@ public class Enemy : MonoBehaviour
     }
 
     private void ChasePlayer()
-    {
+    { 
+        animator.SetBool("IsInCombactRange", false);
         agent.destination = player.position;
     }
 
     private void AttackPlayer()
     {
+        animator.SetBool("IsInCombactRange", true);
         //Make sure enemy doesn't move
         agent.destination = transform.position;
 
