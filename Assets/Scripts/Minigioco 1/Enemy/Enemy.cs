@@ -78,17 +78,13 @@ public class Enemy : MonoBehaviour
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
-        agent.destination=transform.position;
+        agent.destination = transform.position;
 
         transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
-            ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            ///End of attack code
+            PlayerHealt.instance.TakeDamage(5);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerHealt : MonoBehaviour
 {
+    public static PlayerHealt instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -12,14 +18,6 @@ public class PlayerHealt : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
-        }
     }
 
     public void TakeDamage(int damage)
