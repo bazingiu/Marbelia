@@ -24,5 +24,9 @@ public class PlayerHealt : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        print(currentHealth);
+        if(currentHealth <= 0)
+            GameOverScript.instance.Setup();
+            
     }
 }

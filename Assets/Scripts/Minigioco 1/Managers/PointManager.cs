@@ -23,6 +23,11 @@ public class PointManager : MonoBehaviour
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
+    public int getScore()
+    {
+        return score;
+    }
+
     public void AddPoints(int pointsToAdd)
     {
         score += pointsToAdd;
