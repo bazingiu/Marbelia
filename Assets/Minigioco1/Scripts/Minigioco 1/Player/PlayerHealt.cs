@@ -26,7 +26,9 @@ public class PlayerHealt : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         print(currentHealth);
         if(currentHealth <= 0)
+        {
+            Time.timeScale = 0;
             GameOverScript.instance.Setup();
-
+        }
     }
 }

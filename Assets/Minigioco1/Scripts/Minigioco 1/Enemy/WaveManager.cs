@@ -1,7 +1,7 @@
-
 using UnityEngine;
 using System.Collections;
 
+// CONTROLLARE SE FUNZIONA BENE IL SISTEMA DI SPAWN 
 public class WaveManager : MonoBehaviour
 {
     public enum SpawnState {SPAWNING, WAITING, COUNTING};
@@ -21,12 +21,14 @@ public class WaveManager : MonoBehaviour
     public Wave [] waves;
     private int nextWave = 0; 
 
-    public float timeBetweenWaves = 5f; 
+    public float timeBetweenWaves = 5f;
+
     public float waveCountdown; 
 
     private float searchCountdown = 1f; 
 
     private SpawnState state = SpawnState.COUNTING;
+
     void Start()
     {
         waveCountdown = timeBetweenWaves;
@@ -38,7 +40,7 @@ public class WaveManager : MonoBehaviour
         {
            if (!EnemyIsAlive())
            {
-                //begin a new round
+                WaveCompleted();
                 Debug.Log("Wave completed");
            }
            else 
@@ -55,6 +57,23 @@ public class WaveManager : MonoBehaviour
         }
         else 
             waveCountdown -= Time.deltaTime;
+    }
+    
+    void WaveCompleted() {
+        Debug.Log("Wave Completed!");
+        state = SpawnState.COUNTING; 
+        waveCountdown = timeBetweenWaves; 
+
+        if(nextWave + 1 > waves.Length - 1)
+        {
+            nextWave = 0; 
+            // Va in loop ma aggiungeremo qui il codice per dire che sei riuscito a completare
+            Debug.Log("Completed all waves");
+        }
+        else
+        {
+            nextWave++; 
+        }
     }
 
     bool EnemyIsAlive()

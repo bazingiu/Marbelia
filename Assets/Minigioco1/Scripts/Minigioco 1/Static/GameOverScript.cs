@@ -26,11 +26,11 @@ public class GameOverScript : MonoBehaviour
         print("Score: " + score);
         gameObject.SetActive(true);
         pointsText.text = score.ToString() + " POINTS";
-        // Bloccare il movimento ma loro ti picchiano
     }
 
     public void RestartButton()
     {   
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
