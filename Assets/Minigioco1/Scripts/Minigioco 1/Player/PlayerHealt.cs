@@ -24,7 +24,7 @@ public class PlayerHealt : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        print(currentHealth);
+        // print(currentHealth);
         if(currentHealth <= 0)
         {
             Time.timeScale = 0;

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 // CONTROLLARE SE FUNZIONA BENE IL SISTEMA DI SPAWN 
+// Fa le ondate una dopo l'altra 
 public class WaveManager : MonoBehaviour
 {
     public enum SpawnState {SPAWNING, WAITING, COUNTING};
@@ -60,7 +61,6 @@ public class WaveManager : MonoBehaviour
     }
     
     void WaveCompleted() {
-        Debug.Log("Wave Completed!");
         state = SpawnState.COUNTING; 
         waveCountdown = timeBetweenWaves; 
 
@@ -106,7 +106,7 @@ public class WaveManager : MonoBehaviour
 
     void SpawnEnemy (GameObject enemy, Transform SpawnPosition )
     {
-        Debug.Log("Spawning Enemy: " + enemy.name);
+        // Debug.Log("Spawning Enemy: " + enemy.name);
         Instantiate (enemy, SpawnPosition.position, SpawnPosition.rotation );
     }
 }

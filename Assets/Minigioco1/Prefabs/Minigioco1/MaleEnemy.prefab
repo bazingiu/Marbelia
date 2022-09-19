@@ -162,7 +162,7 @@ MonoBehaviour:
   timeBetweenAttacks: 0.2
   projectile: {fileID: 714159632844201673, guid: c43057d407b0ae44bb8fdeb79d981443,
     type: 3}
-  sightRange: 57
+  sightRange: 1002.8
   attackRange: 8
   playerInSightRange: 1
   playerInAttackRange: 1

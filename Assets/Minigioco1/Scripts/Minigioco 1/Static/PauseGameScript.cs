@@ -22,7 +22,7 @@ public class PauseGameScript : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None; 
         gameObject.SetActive(true);
-        print(gameObject);
+        // print(gameObject);
     }
 
     public void CursorMode()
