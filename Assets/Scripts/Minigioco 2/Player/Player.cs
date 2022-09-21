@@ -32,7 +32,9 @@ public class Player : MonoBehaviour{
 
     void Update()
     {
-
+        if (Input.GetKeyDown("escape")){
+            game.mainMenu();
+        }
     }
 
     public void Hit (float damage){
