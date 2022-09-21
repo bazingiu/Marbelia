@@ -11,17 +11,19 @@ public class PowerUp : MonoBehaviour
     public GameObject PowerUpitem;
     public Vector3 sizeChange;
     private float duration = 5f;
+    public Renderer rend;
 
     private int effect_control = 0; 
     void Start()
     {
-        print("ciao");
         currentGun = GameObject.Find("Gun");
         newGun = GameObject.Find("mp5");
+        rend = newGun.GetComponent<Renderer>();
         print(currentGun);
         print(newGun);
         currentGun.SetActive(true);
-        newGun.SetActive(false); 
+        // newGun.SetActive(false); 
+        rend.enabled = false;
     }
     
     void OnTriggerEnter(Collider other)
@@ -44,7 +46,8 @@ public class PowerUp : MonoBehaviour
         // Apply effect to the player 
         // currentGun.SetActive(false);
         currentGun.SetActive(false);
-        newGun.SetActive(true); 
+        // newGun.SetActive(true); 
+        rend.enabled = true;
          
         // Remove power up from the sceen
         // Problema quando si disarriva rispetto alla corutine
@@ -59,7 +62,8 @@ public class PowerUp : MonoBehaviour
 
         // Reverse the effect on our player
         currentGun.SetActive(true);
-        newGun.SetActive(true); 
+        // newGun.SetActive(true); 
+        rend.enabled = false;
 
         print("fine effetto");
         effect_control = 0; 
