@@ -9,6 +9,11 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
 
+    void start()
+    {
+
+    }
+    
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))

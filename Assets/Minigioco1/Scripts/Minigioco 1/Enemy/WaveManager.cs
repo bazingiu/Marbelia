@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 // CONTROLLARE SE FUNZIONA BENE IL SISTEMA DI SPAWN 
-// Fa le ondate una dopo l'altra 
 public class WaveManager : MonoBehaviour
 {
     public enum SpawnState {SPAWNING, WAITING, COUNTING};
@@ -29,6 +28,7 @@ public class WaveManager : MonoBehaviour
     private float searchCountdown = 1f; 
 
     private SpawnState state = SpawnState.COUNTING;
+
 
     void Start()
     {
