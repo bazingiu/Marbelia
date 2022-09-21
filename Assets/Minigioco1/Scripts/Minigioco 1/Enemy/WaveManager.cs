@@ -22,7 +22,7 @@ public class WaveManager : MonoBehaviour
     public Wave [] waves;
     private int nextWave = 0; 
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves;
 
     public float waveCountdown; 
 
