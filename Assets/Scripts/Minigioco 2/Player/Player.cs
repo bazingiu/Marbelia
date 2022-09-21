@@ -8,17 +8,21 @@ public class Player : MonoBehaviour{
     [SerializeField] protected float speed;
 
     public bool invicible = false;
-    protected float health;
+    public float health;
     [SerializeField] public int points = 0;
 
     public GameManager game;
 
     public HealthBar healthBar;
 
-
     void Start()
     {
         Init();
+    }
+
+    public float getHealth()
+    {
+        return health;
     }
 
     private void Init(){

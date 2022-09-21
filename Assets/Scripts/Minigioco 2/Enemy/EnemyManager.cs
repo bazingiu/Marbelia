@@ -9,12 +9,13 @@ public class EnemyManager : MonoBehaviour{
     [SerializeField] float timeToSpawn;
     float PlaceY;
     public float timer = 0;
-
     int enemyCounter;
     bool full = false;
+    Player player;
 
     void Start(){
         //spawnObjects();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     /*public void spawnObjects(){
@@ -61,7 +62,16 @@ public class EnemyManager : MonoBehaviour{
             else{
                  enemyCounter = 0;
                  full = true;
-            } 
+            }
+            enemyCounter = 0;
+            for (int i = enemyCounter; i < enemyLength; i++)
+            {
+                if (enemyList[i].transform.position.x < -1)
+                {
+                    enemyList[i].SetActive(false);
+                    break;
+                }
+            }
         }
     }
 

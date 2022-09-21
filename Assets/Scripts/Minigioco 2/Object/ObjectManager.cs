@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ObjectManager : MonoBehaviour
 {
@@ -14,27 +15,12 @@ public class ObjectManager : MonoBehaviour
     int objectCounter;
     bool full = false;
 
-    void Start(){
-        //spawnObjects();
+    Player player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
-
-    /*public void spawnObjects(){
-        destroyObjects();
-        int randomItem = 0;
-        GameObject toSpawn;
-
-        float screenY;
-        Vector2 pos;
-        for (int i =0; i<enemyLength; i++){
-            randomItem = Random.Range(0,enemyList.Count);
-            toSpawn = enemyList[randomItem];
-
-            screenY = Random.Range(-2,7);
-            pos = new Vector2(3, screenY);
-
-            Instantiate(toSpawn, pos, toSpawn.transform.rotation);
-        }
-    }*/
 
     private void destroyObjects(){
         foreach(GameObject o in GameObject.FindGameObjectsWithTag("Object")){
@@ -64,6 +50,15 @@ public class ObjectManager : MonoBehaviour
                  full = true;
             } 
         }
+        objectCounter = 0;
+        for (int i = objectCounter; i < objectLength; i++)
+        {
+            if (objectList[i].transform.position.x <-1)
+            {
+                objectList[i].SetActive(false);
+                break;
+            }
+        }
     }
 
     void SpawnObject(){
@@ -74,7 +69,23 @@ public class ObjectManager : MonoBehaviour
         int objectCounter = 0;
         float screenY;
         Vector2 pos;
+       
+        if (player.health>0){
+            for (int i = objectCounter; i < objectLength; i++)
+            {
+                if (!objectList[i].activeInHierarchy)
+                {
+                    objectCounter = i + 1;
+                    toSpawn = objectList[i];
+                    screenY = Random.Range(-1, 5);
+                    pos = new Vector2(3, screenY);
+                    Instantiate(toSpawn, pos, toSpawn.transform.rotation);
+                    break;
+                }
+            }
+        }
 
+        /*
         for (int i = objectCounter; i<objectLength; i++){
             if (!objectList[i].activeInHierarchy){
                 objectCounter = i+1;
@@ -84,6 +95,6 @@ public class ObjectManager : MonoBehaviour
                 Instantiate(toSpawn, pos, toSpawn.transform.rotation);
                 break;
             }
-        }
+        }*/
     }
 }
