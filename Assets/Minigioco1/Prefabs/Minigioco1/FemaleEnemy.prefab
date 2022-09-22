@@ -158,7 +158,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 8
   m_Acceleration: 8
-  avoidancePriority: 25
+  avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -189,17 +189,12 @@ MonoBehaviour:
     m_Bits: 512
   health: 40
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 3000
+  walkPointRange: 3
   timeBetweenAttacks: 0.2
   projectile: {fileID: 714159632844201673, guid: c43057d407b0ae44bb8fdeb79d981443,
     type: 3}
-<<<<<<< Updated upstream
-  sightRange: 1002.8
-  attackRange: 15.15
-=======
-  sightRange: 3000
+  sightRange: 500
   attackRange: 8
->>>>>>> Stashed changes
   playerInSightRange: 1
   playerInAttackRange: 1
 --- !u!1 &2350298904764290337

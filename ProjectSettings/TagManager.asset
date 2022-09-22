@@ -8,7 +8,9 @@ TagManager:
   - PowerUp
   - PowerUpObject
   - mp5
-  - WeaponManager
+  - Undefined
+  - WeaponsManager
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Player
   - Enemy
   - Object
-  - 
-  - 
+  - WhatIsGround
+  - WhatIsPlayer
   - 
   - 
   - 
