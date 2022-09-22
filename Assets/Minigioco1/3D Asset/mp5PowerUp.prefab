@@ -53,16 +53,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7058053884937686137}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 325706f0d00cfb049bb4d3e853c0c965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 100012, guid: a905d8e5159ffeb46baa8d2a7624717f, type: 3}
   newGun: {fileID: 0}
-  currentGun: {fileID: 0}
+  currentGun: {fileID: 1791774932667290, guid: 419d31cd2358c274b93f3ed5fac4773f, type: 3}
   PowerUpitem: {fileID: 0}
   sizeChange: {x: 100, y: 100, z: 100}
+  rend: {fileID: 0}
 --- !u!1 &7764548553906147971
 GameObject:
   m_ObjectHideFlags: 0

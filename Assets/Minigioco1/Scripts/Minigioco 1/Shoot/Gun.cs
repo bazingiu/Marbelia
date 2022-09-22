@@ -8,18 +8,14 @@ public class Gun : MonoBehaviour
     
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
-
-    void start()
-    {
-
-    }
     
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            shoot();
+             shoot();
         }
+
     }
 
     //shoot with raycast, look if the bull arrived somewere 
@@ -41,6 +37,5 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
         }
-
     }
 }

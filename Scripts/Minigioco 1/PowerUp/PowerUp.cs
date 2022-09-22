@@ -16,11 +16,13 @@ public class PowerUp : MonoBehaviour
     private int effect_control = 0; 
     void Start()
     {
-        currentGun = GameObject.Find("Gun");
-        newGun = GameObject.Find("mp5");
-        rend = newGun.GetComponent<Renderer>();
+        currentGun = GameObject.FindGameObjectWithTag("Gun") ;
+        newGun = GameObject.FindGameObjectWithTag("mp5") ;
         print(currentGun);
-        print(newGun);
+        print(newGun); 
+
+        rend = newGun.GetComponent<Renderer>();
+        
         currentGun.SetActive(true);
         // newGun.SetActive(false); 
         rend.enabled = false;

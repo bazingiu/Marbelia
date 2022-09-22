@@ -7,9 +7,8 @@ TagManager:
   - Gun
   - PowerUp
   - PowerUpObject
-  tags:
-  - Enemy
-  - Object
+  - mp5
+  - WeaponManager
   layers:
   - Default
   - TransparentFX
