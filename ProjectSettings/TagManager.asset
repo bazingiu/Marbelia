@@ -12,6 +12,7 @@ TagManager:
   - WeaponsManager
   - Enemy
   - Object
+  - MainMenu
   layers:
   - Default
   - TransparentFX
