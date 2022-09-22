@@ -2,36 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Object : MonoBehaviour
+namespace Minigioco2
 {
-
-    [SerializeField] protected float speed;
-    [SerializeField] protected int points;
-
-    protected virtual void Init(){
-    }
-
-    void Start()
+    public class Object : MonoBehaviour
     {
-        Init();
-    }
-    void Update()
-    {
-        
-    }
 
-    private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 8){
-            col.gameObject.GetComponent<Player>().addPoints(points);
-            gameObject.SetActive(false);
+        [SerializeField] protected float speed;
+        [SerializeField] protected int points;
+
+        protected virtual void Init()
+        {
         }
-    }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8){
-            collision.gameObject.GetComponent<Player>().addPoints(points);
-            gameObject.SetActive(false);
+        void Start()
+        {
+            Init();
         }
-    }*/
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.layer == 8)
+            {
+                col.gameObject.GetComponent<Player>().addPoints(points);
+                gameObject.SetActive(false);
+            }
+        }
+
+        /*private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == 8){
+                collision.gameObject.GetComponent<Player>().addPoints(points);
+                gameObject.SetActive(false);
+            }
+        }*/
+    }
 }

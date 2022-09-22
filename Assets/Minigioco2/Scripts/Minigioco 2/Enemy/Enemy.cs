@@ -1,30 +1,37 @@
-﻿using System.Collections;
+﻿using Minigioco2;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy: MonoBehaviour
+namespace Minigioco2
 {
-
-    [SerializeField] protected float speed;
-    [SerializeField] protected float strength;
-
-    protected virtual void Init(){
-    }
-
-    void Start()
+    public class Enemy : MonoBehaviour
     {
-        Init();
-    }
-    void Update()
-    {
-        
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8){
-            collision.gameObject.GetComponent<Player>().Hit(strength);
-            gameObject.SetActive(false);
+        [SerializeField] protected float speed;
+        [SerializeField] protected float strength;
+
+        protected virtual void Init()
+        {
+        }
+
+        void Start()
+        {
+            Init();
+        }
+        void Update()
+        {
+
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == 8)
+            {
+                collision.gameObject.GetComponent<Player>().Hit(strength);
+                gameObject.SetActive(false);
+            }
         }
     }
+
 }

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMovement : MonoBehaviour
+namespace Minigioco2
 {
-    [SerializeField] float speed;
-    void Update()
+    public class ObjectMovement : MonoBehaviour
     {
-        transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime * speed;
+        [SerializeField] float speed;
+        void Update()
+        {
+            transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime * speed;
+        }
     }
 }

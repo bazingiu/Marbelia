@@ -2,60 +2,70 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Minigioco1
+namespace Minigioco2
+{
 
-public class Player : MonoBehaviour{
-
-    [SerializeField] protected float maxHealth;
-    [SerializeField] protected float speed;
-
-    public bool invicible = false;
-    public float health;
-    [SerializeField] public int points = 0;
-
-    public GameManager game;
-
-    public HealthBar healthBar;
-
-    void Start()
+    public class Player : MonoBehaviour
     {
-        Init();
-    }
 
-    public float getHealth()
-    {
-        return health;
-    }
+        [SerializeField] protected float maxHealth;
+        [SerializeField] protected float speed;
 
-    private void Init(){
-        health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
+        public bool invicible = false;
+        public float health;
+        [SerializeField] public int points = 0;
 
-    void Update()
-    {
-        if (Input.GetKeyDown("escape")){
-            game.mainMenu();
+        public GameManager game;
+
+        public HealthBar healthBar;
+
+        void Start()
+        {
+            Init();
         }
-    }
 
-    public void Hit (float damage){
-        if(invicible==false){
-            health -= damage;
-            healthBar.SetHealth(health);
+        public float getHealth()
+        {
+            return health;
         }
-        if (health<=0){
-            Time.timeScale = 0;
-            Kill();
+
+        private void Init()
+        {
+            health = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
         }
-    }
 
-    public void Kill(){
-        gameObject.SetActive(false);
-        game.GameOver();
-    }
+        void Update()
+        {
+            if (Input.GetKeyDown("escape"))
+            {
+                game.mainMenu();
+            }
+        }
 
-    public void addPoints(int newPoints){
-        points += newPoints;
+        public void Hit(float damage)
+        {
+            if (invicible == false)
+            {
+                health -= damage;
+                healthBar.SetHealth(health);
+            }
+            if (health <= 0)
+            {
+                Time.timeScale = 0;
+                Kill();
+            }
+        }
+
+        public void Kill()
+        {
+            gameObject.SetActive(false);
+            game.GameOver();
+        }
+
+        public void addPoints(int newPoints)
+        {
+            points += newPoints;
+        }
     }
 }

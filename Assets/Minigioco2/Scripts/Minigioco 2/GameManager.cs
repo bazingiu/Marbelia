@@ -2,35 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Minigioco2
 {
-    public GameOverScreen GameOverScreen;
+    public class GameManager : MonoBehaviour
+    {
+        public GameOverScreen GameOverScreen;
 
-    bool pause = false;
+        bool pause = false;
 
-    public void GameOver(){
-        GameOverScreen.Setup();
-    }
+        public void GameOver()
+        {
+            GameOverScreen.Setup();
+        }
 
-    public void mainMenu(){
-        pause = !pause;
-        if (pause == false)
+        public void mainMenu()
+        {
+            pause = !pause;
+            if (pause == false)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
+        }
+
+        void Start()
         {
             Time.timeScale = 1;
         }
-        else
+
+        void Update()
         {
-            Time.timeScale = 0;
+
         }
-    }
-
-    void Start()
-    {
-        Time.timeScale = 1;   
-    }
-
-    void Update()
-    {
-        
     }
 }
