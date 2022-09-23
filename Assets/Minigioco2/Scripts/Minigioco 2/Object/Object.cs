@@ -6,8 +6,6 @@ namespace Minigioco2
 {
     public class Object : MonoBehaviour
     {
-
-        [SerializeField] protected float speed;
         [SerializeField] protected int points;
 
         protected virtual void Init()

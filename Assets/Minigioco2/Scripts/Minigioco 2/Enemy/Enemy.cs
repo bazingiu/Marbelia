@@ -8,9 +8,6 @@ namespace Minigioco2
     public class Enemy : MonoBehaviour
     {
 
-        [SerializeField] protected float speed;
-        [SerializeField] protected float strength;
-
         protected virtual void Init()
         {
         }
@@ -28,7 +25,7 @@ namespace Minigioco2
         {
             if (collision.gameObject.layer == 8)
             {
-                collision.gameObject.GetComponent<Player>().Hit(strength);
+                collision.gameObject.GetComponent<Player>().Hit(GameData.strength);
                 gameObject.SetActive(false);
             }
         }

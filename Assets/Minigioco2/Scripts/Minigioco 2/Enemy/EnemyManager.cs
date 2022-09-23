@@ -10,6 +10,7 @@ namespace Minigioco2
         [SerializeField] List<GameObject> enemyList;
         [SerializeField] int enemyLength;
         [SerializeField] float timeToSpawn;
+        public static EnemyManager instance;
         float PlaceY;
         public float timer = 0;
         int enemyCounter;
@@ -55,10 +56,11 @@ namespace Minigioco2
                 go.SetActive(false);
             }
         }
-
         private void Awake()
         {
+            instance = this;
         }
+
 
         void Update()
         {

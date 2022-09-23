@@ -871,7 +871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &211521223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2845,8 +2845,8 @@ RectTransform:
   m_Father: {fileID: 967536814}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3309,7 +3309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumetTextValue: {fileID: 41162198}
   volumeSlider: {fileID: 1707150863}
-  confirmationPrompt: {fileID: 0}
   defaultVolume: 0.5
   menu: {fileID: 803685786}
 --- !u!1 &663548025
@@ -7628,6 +7627,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 863790682}
+    - target: {fileID: 4799077166305952460, guid: ad1773990bb5009419de82ef88558a51,
+        type: 3}
+      propertyPath: health
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4799077166305952463, guid: ad1773990bb5009419de82ef88558a51,
         type: 3}
       propertyPath: m_LocalPosition.x

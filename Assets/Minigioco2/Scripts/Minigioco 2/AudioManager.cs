@@ -5,10 +5,17 @@ using UnityEngine.Audio;
 namespace Minigioco2 { 
     public class AudioManager : MonoBehaviour
     {
+        public static AudioManager instance;
+ 
         // Utilizza le caratteristiche della classe sound che ci consente di inserire varie info per i nostri suoni
         public Sound[] sounds;
 
         void Awake()
+        {
+            instance = this;
+        }
+
+        void Start()
         {
             foreach (Sound s in sounds)
             {
@@ -19,11 +26,12 @@ namespace Minigioco2 {
                 s.source.pitch = s.pitch;
                 s.source.loop = s.loop;
             }
+            Play("Background");
         }
 
-        void Start()
+        public void StopMusic()
         {
-            Play("Background");
+            Stop("Background");
         }
 
         public void Play(string name)
@@ -31,10 +39,15 @@ namespace Minigioco2 {
             Sound s = Array.Find(sounds, sound => sound.name == name);
             if (s == null)
             {
-                Debug.LogWarning("Sound: " + name + "not found!")
-    ; return;
+                Debug.LogWarning("Sound: " + name + "not found!");
+                return;
             }
             s.source.Play();
+        }
+
+        public void Stop(string name)
+        {
+            Debug.Log(name);
         }
     }
 }

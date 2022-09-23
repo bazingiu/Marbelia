@@ -7,8 +7,6 @@ namespace Minigioco2
     public class PlayerMovement : MonoBehaviour
     {
 
-        [SerializeField] float speed;
-
         void Start()
         {
 
@@ -16,7 +14,7 @@ namespace Minigioco2
         void Update()
         {
             var movement = Input.GetAxis("Vertical");
-            transform.position += new Vector3(0, movement, 0) * Time.deltaTime * speed;
+            transform.position += new Vector3(0, movement, 0) * Time.deltaTime * GameData.speedPlayer;
         }
     }
 }

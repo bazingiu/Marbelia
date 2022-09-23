@@ -8,9 +8,6 @@ namespace Minigioco2
     public class Player : MonoBehaviour
     {
 
-        [SerializeField] protected float maxHealth;
-        [SerializeField] protected float speed;
-
         public bool invicible = false;
         public float health;
         [SerializeField] public int points = 0;
@@ -31,8 +28,8 @@ namespace Minigioco2
 
         private void Init()
         {
-            health = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
+            health = GameData.maxHealthPlayer;
+            healthBar.SetMaxHealth(GameData.maxHealthPlayer);
         }
 
         void Update()
@@ -56,6 +53,7 @@ namespace Minigioco2
 
         public void Kill()
         {
+            //AudioManager.instance.StopMusic();
             gameObject.SetActive(false);
             game.GameOver();
         }

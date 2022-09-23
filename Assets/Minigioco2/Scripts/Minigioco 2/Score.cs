@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Google.Protobuf.WellKnownTypes;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,9 @@ namespace Minigioco2
 
         private int maxPoint = 20;
 
+        delegate void MultiDelegate();
+        MultiDelegate myMultiDelegate;
+
         async void Update()
         {
             currentTime = Time.time;
@@ -29,13 +33,25 @@ namespace Minigioco2
 
         IEnumerator PowerUp(float duration)
         {
-
-            player.invicible = true;
-            invicible.gameObject.SetActive(true);
+            myMultiDelegate += setInvicibleActive;
+            myMultiDelegate += setInvicibleTextActive;
+            if (myMultiDelegate != null)
+            {
+                myMultiDelegate();
+            }
             yield return new WaitForSeconds(duration);
             player.invicible = false;
             invicible.gameObject.SetActive(false);
 
+        }
+        void setInvicibleActive()
+        {
+            player.invicible = true;
+        }
+
+        void setInvicibleTextActive()
+        {
+            invicible.gameObject.SetActive(true);
         }
     }
 }
