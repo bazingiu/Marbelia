@@ -12,6 +12,7 @@ TagManager:
   - WeaponsManager
   - Enemy
   - Object
+  - Tutorial
   layers:
   - Default
   - TransparentFX

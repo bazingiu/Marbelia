@@ -5,19 +5,30 @@ public class Gun : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f; 
-    
+    public bool shootOn;
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     
-    void Update()
+    public void disableShoot()
     {
-        if(Input.GetButtonDown("Fire1"))
-        {
-             shoot();
-        }
-
+        shootOn = false; 
     }
 
+    public void enableShoot()
+    {
+        shootOn = true; 
+    }
+    void Update()
+    {
+        if(shootOn == true)
+        {
+            if(Input.GetButtonDown("Fire1"))
+            {
+                shoot();
+            }
+        }
+    }
+    
     //shoot with raycast, look if the bull arrived somewere 
     void shoot()
     {   
