@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
     //Reference to out agent
     NavMeshAgent agent;
     Animator animator;
-
     public Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;

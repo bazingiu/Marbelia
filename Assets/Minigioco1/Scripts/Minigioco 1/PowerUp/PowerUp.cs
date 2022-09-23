@@ -11,12 +11,15 @@ public class PowerUp : MonoBehaviour
     public GameObject currentGun;
     public GameObject PowerUpitem;
     public Vector3 sizeChange;
-    private float duration = 10f;
-
+    private float duration = GameData.duration;
     private int effect_control = 0; 
+    delegate void MultiDelegate();
+    MultiDelegate visiveEffect;
     void Start()
     {
         weaponsmanager = GameObject.FindGameObjectWithTag("WeaponsManager");
+        visiveEffect += disappearEffect;
+        visiveEffect += disactivePowerUp;
     }
     
     void OnTriggerEnter(Collider other)
@@ -28,20 +31,13 @@ public class PowerUp : MonoBehaviour
 
     }
 
+    //   
     IEnumerator PickUp()
     { 
-        effect_control++; 
+        // Spawn a cool effect and remove power up from the sceen
+        visiveEffect();
 
-         // Spawn a cool effect
-        if(effect_control == 1)
-            Instantiate(pickupEffect, transform.position, transform.rotation);
-                
         weaponsmanager.GetComponent<WeaponsManager>().SwitchWeapon(1);
-
-        // Remove power up from the sceen
-        // Problema quando si disarriva rispetto alla corutine
-        PowerUpitem = GameObject.FindGameObjectWithTag("PowerUp") ; 
-        PowerUpitem.SetActive(false);
 
         print("inizio effetto");
         // Wait x amount of seconds
@@ -53,6 +49,19 @@ public class PowerUp : MonoBehaviour
         print("fine effetto");
         effect_control = 0; 
         Destroy(gameObject); 
+    }
+
+    void disactivePowerUp ()
+    {
+        PowerUpitem = GameObject.FindGameObjectWithTag("PowerUp") ; 
+        PowerUpitem.SetActive(false);
+    }
+
+    void disappearEffect()
+    {
+        effect_control++; 
+        if(effect_control == 1)
+            Instantiate(pickupEffect, transform.position, transform.rotation);
     }
     
 }

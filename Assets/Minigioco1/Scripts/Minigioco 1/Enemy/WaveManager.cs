@@ -21,11 +21,11 @@ public class WaveManager : MonoBehaviour
     public Wave [] waves;
     private int nextWave = 0; 
 
-    public float timeBetweenWaves;
+    private float timeBetweenWaves = GameData.timeBetweenWaves;
 
     public float waveCountdown; 
 
-    private float searchCountdown = 1f; 
+    private float searchCountdown = GameData.searchCountdown; 
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -68,6 +68,7 @@ public class WaveManager : MonoBehaviour
         {
             nextWave = 0; 
             // Va in loop ma aggiungeremo qui il codice per dire che sei riuscito a completare
+            //Aggiungere schermata di vittoria!!!!
             Debug.Log("Completed all waves");
         }
         else
@@ -81,7 +82,7 @@ public class WaveManager : MonoBehaviour
         searchCountdown -= Time.deltaTime;
         if(searchCountdown <= 0)
         {
-            searchCountdown = 1f;
+            searchCountdown = GameData.searchCountdown;
             if(GameObject.FindGameObjectWithTag("Enemy") == null )
                 return false;
         }

@@ -12,8 +12,8 @@ public class TutorialScript : MonoBehaviour
 	void Awake () 
 	{
 		command.stopPauseControl();
-		gun.enableShoot();
-		mp5.enableShoot();
+		gun.disableShoot();
+		mp5.disableShoot();
         Time.timeScale = 0;
 	}
 
@@ -21,11 +21,11 @@ public class TutorialScript : MonoBehaviour
     {
 		command.startPauseControl();
 		gun.enableShoot();
-		mp5.disableShoot();
+		mp5.enableShoot();
 		GameObject tutorial = new GameObject();
 		tutorial = GameObject.FindGameObjectWithTag("Tutorial") ;
     	tutorial.SetActive(false);
-		Cursor.visible = true;
+		Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 		Time.timeScale = 1;  
 	}

@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerHealt : MonoBehaviour
 {
     public static PlayerHealt instance;
-
     void Awake()
     {
         instance = this;
     }
-    public int maxHealth = 100;
+    public int maxHealth = GameData.maxHealth;
     public int currentHealth;
 
     public HealthBar healthBar;
@@ -24,7 +23,7 @@ public class PlayerHealt : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        // print(currentHealth);
+
         if(currentHealth <= 0)
         {
             Time.timeScale = 0;
