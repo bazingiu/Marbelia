@@ -12,7 +12,6 @@ namespace Minigioco2
         [Header("Volume Setting")]
         [SerializeField] private Text volumetTextValue = null;
         [SerializeField] private Slider volumeSlider = null;
-        [SerializeField] private GameObject confirmationPrompt = null;
         [SerializeField] private float defaultVolume = 0.5f;
         [SerializeField] GameObject menu; 
 
@@ -58,15 +57,6 @@ namespace Minigioco2
         public void VolumeApply()
         {
             PlayerPrefs.SetFloat("mastervolume", AudioListener.volume);
-            //Show Prompt
-            StartCoroutine(ConfirmationBox());
-        }
-
-        public IEnumerator ConfirmationBox()
-        {
-            confirmationPrompt.SetActive(true);
-            yield return new WaitForSeconds(2);
-            confirmationPrompt.SetActive(false);
         }
 
         public void resetButton(string MenuType)
