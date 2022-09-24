@@ -11,14 +11,12 @@ public class PlayerHealt : MonoBehaviour
     }
     public int maxHealth = GameData.maxHealth;
     public int currentHealth;
-
     public HealthBar healthBar;
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
-
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -29,5 +27,15 @@ public class PlayerHealt : MonoBehaviour
             Time.timeScale = 0;
             GameOverScript.instance.Setup();
         }
+    }
+
+    public int getCurrentHealt()
+    {
+        return currentHealth;
+    }
+
+    public void setHealth(int healt)
+    {
+        currentHealth = healt; 
     }
 }

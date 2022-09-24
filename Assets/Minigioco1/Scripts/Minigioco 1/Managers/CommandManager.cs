@@ -4,12 +4,26 @@ using UnityEngine.Audio;
 
 public class CommandManager : MonoBehaviour
 {
-    public bool pauseOn; 
+    public bool pauseOn;
     void Start()
     {
-        GameObject tutorial = new GameObject();
-        tutorial = GameObject.Find("Tutorialview");
-        tutorial.SetActive(true);
+        print(PlayerPrefs.GetInt("loaded"));
+        if (!PlayerPrefs.HasKey("loaded"))
+        {
+            print("ciao");
+            PlayerPrefs.SetInt("loaded", 0);
+            PlayerPrefs.Save();
+        }
+
+
+        if (PlayerPrefs.GetInt("loaded") == 0)
+        {
+            print("cacca");
+            GameObject tutorial = new GameObject();
+            tutorial = GameObject.Find("Tutorialview");
+            tutorial.SetActive(true);
+            PlayerPrefs.SetInt("loaded", 1);
+        }
     }
     public void stopPauseControl()
     {
