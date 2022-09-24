@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        
     }
     public void Minigame1()
     {

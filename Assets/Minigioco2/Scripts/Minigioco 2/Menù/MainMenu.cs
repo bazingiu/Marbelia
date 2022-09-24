@@ -19,6 +19,11 @@ namespace Minigioco2
 
         bool pause = false;
 
+        public void Awake()
+        {
+            menu.SetActive(false);
+        }
+
         public void Start()
         {
             m_MyEvent = new UnityEvent();
@@ -58,7 +63,7 @@ namespace Minigioco2
 
         public void ExitButton()
         {
-            //SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
 
         public void SetVolume(float volume)
