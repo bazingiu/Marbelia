@@ -10,7 +10,6 @@ public class CommandManager : MonoBehaviour
         print(PlayerPrefs.GetInt("loaded"));
         if (!PlayerPrefs.HasKey("loaded"))
         {
-            print("ciao");
             PlayerPrefs.SetInt("loaded", 0);
             PlayerPrefs.Save();
         }
@@ -18,7 +17,6 @@ public class CommandManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("loaded") == 0)
         {
-            print("cacca");
             GameObject tutorial = new GameObject();
             tutorial = GameObject.Find("Tutorialview");
             tutorial.SetActive(true);
