@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Minigioco2
 {
@@ -8,21 +9,15 @@ namespace Minigioco2
     {
         public GameOverScreen GameOverScreen;
 
-        public MainMenu MainMenuScreen;
-
         public void GameOver()
         {
             GameOverScreen.Setup();
-        }
-
-        void Start()
-        {
-            Time.timeScale = 1;
         }
 
         void Update()
         {
 
         }
+ 
     }
 }

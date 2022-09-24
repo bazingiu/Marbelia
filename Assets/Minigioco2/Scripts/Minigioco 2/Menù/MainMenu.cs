@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor.UI;
+using UnityEngine.Events;
 
 namespace Minigioco2
 {
@@ -13,24 +14,36 @@ namespace Minigioco2
         [SerializeField] private Text volumetTextValue = null;
         [SerializeField] private Slider volumeSlider = null;
         [SerializeField] private float defaultVolume = 0.5f;
-        [SerializeField] GameObject menu; 
+        [SerializeField] GameObject menu;
+        UnityEvent m_MyEvent;
 
         bool pause = false;
+
+        public void Start()
+        {
+            m_MyEvent = new UnityEvent();
+            m_MyEvent.AddListener(managePauseMenu);
+        }
         public void Update()
         {
             if (Input.GetKeyDown("escape"))
             {
-                pause = !pause;
-                if (pause == false)
-                {
-                    Disable();
-                    Time.timeScale = 1;
-                }
-                else
-                {
-                    Setup();
-                    Time.timeScale = 0;
-                }
+                m_MyEvent.Invoke();
+            }
+        }
+
+        void managePauseMenu()
+        {
+            pause = !pause;
+            if (pause == false)
+            {
+                Disable();
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Setup();
+                Time.timeScale = 0;
             }
         }
         public void Setup()

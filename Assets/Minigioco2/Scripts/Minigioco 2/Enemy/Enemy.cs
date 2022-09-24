@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Minigioco2
 {
     public class Enemy : MonoBehaviour
     {
-
         protected virtual void Init()
         {
         }
@@ -20,7 +20,6 @@ namespace Minigioco2
         {
 
         }
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.layer == 8)

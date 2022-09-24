@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Minigioco2
 {
 
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IKillable<float>
     {
 
         public bool invicible = false;
@@ -50,10 +50,9 @@ namespace Minigioco2
                 Kill();
             }
         }
-
-        public void Kill()
+        public virtual void Kill()
         {
-            //AudioManager.instance.StopMusic();
+            AudioManager.instance.StopMusic();
             gameObject.SetActive(false);
             game.GameOver();
         }
