@@ -5,18 +5,17 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    protected GameObject pickupEffect;
+    public GameObject pickupEffect;
     protected GameObject PowerUpitem;
-    // public Vector3 sizeChange;
     protected float duration = GameData.duration;
     protected int effect_control = 0; 
-    protected delegate void MultiDelegate();
-    protected MultiDelegate visiveEffect;
-  
+    
+    public void effect()
+    {
+    }
+
     public virtual void Start()
     {
-        visiveEffect += disappearEffect;
-        visiveEffect += disactivePowerUp;
     }
     public void disactivePowerUp ()
     {
@@ -24,12 +23,9 @@ public class PowerUp : MonoBehaviour
         PowerUpitem.SetActive(false);
     }
 
-    public void disappearEffect()
+    public virtual void disappearEffect()
     {
-        effect_control++; 
-        if(effect_control == 1)
-            Instantiate(pickupEffect, transform.position, transform.rotation);
-    }
-    
+        Instantiate(pickupEffect, transform.position, transform.rotation);
+    }    
 }
 

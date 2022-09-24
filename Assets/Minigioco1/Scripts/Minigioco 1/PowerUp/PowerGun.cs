@@ -6,28 +6,32 @@ using UnityEngine;
 public class PowerGun : PowerUp
 {
     public GameObject weaponsmanager;
-    public GameObject newGun;
-    public GameObject currentGun;
     public Vector3 sizeChange;
     public override void Start()
     {
+        print("Spowned mp5");
         weaponsmanager = GameObject.FindGameObjectWithTag("WeaponsManager");
-        visiveEffect += disappearEffect;
-        visiveEffect += disactivePowerUp;
     }
     
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {   
-            StartCoroutine(PickUp());
+           effect(); 
         }
+    }
+
+    public void effect()
+    {
+        print("effect");
+        StartCoroutine(PickUp());
     }
 
     public IEnumerator PickUp()
     { 
         // Spawn a cool effect and remove power up from the sceen
-        visiveEffect();
+        disappearEffect();
+        disactivePowerUp();
 
         weaponsmanager.GetComponent<WeaponsManager>().SwitchWeapon(1);
 
@@ -41,6 +45,13 @@ public class PowerGun : PowerUp
         print("fine effetto");
         effect_control = 0; 
         Destroy(gameObject); 
+    }
+
+    public void disappearEffect()
+    {
+        effect_control++; 
+        if(effect_control == 1)
+            Instantiate(pickupEffect, transform.position, transform.rotation);
     }
 }
 

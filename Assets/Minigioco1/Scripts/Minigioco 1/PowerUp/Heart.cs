@@ -7,28 +7,32 @@ public class Heart : PowerUp
 {
     public HealthBar healthBar;
     private int health;
-
     public override void Start()
     {
-        visiveEffect += disappearEffect;
-        visiveEffect += disactivePowerUp;
+        print("Spowned heart");
     }
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {   
-            improveHealt();
+            effect(30);
         }
     }
-    void improveHealt()
+    void effect(int value)
     {
         health = PlayerHealt.instance.getCurrentHealt();
-        health += 30;
+        health += value;
+        disappearEffect();
+        disactivePowerUp();
         print(health);
-        // HealthBar.SetMaxHealth(health);
         PlayerHealt.instance.setHealth(health);
-        // healthBar.SetHealth(health);
+        healthBar.SetHealth(health);
         Destroy(gameObject); 
     }
+
+    public void disappearEffect()
+    {
+        Instantiate(pickupEffect, transform.position, transform.rotation);
+    }    
 }
 

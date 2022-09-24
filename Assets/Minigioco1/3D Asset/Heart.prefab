@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea79937523bdb3340a4740658228b68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 100008, guid: 45a042ad00395204ca3f3561c3a05756, type: 3}
 --- !u!65 &1660989487261672934
 BoxCollider:
   m_ObjectHideFlags: 0
