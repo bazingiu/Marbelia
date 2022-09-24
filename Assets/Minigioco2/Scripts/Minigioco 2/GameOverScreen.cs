@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 namespace Minigioco2
 {
     public class GameOverScreen : MonoBehaviour
     {
+        public void Awake()
+        {
+            GameObject.FindGameObjectWithTag("GameOver").SetActive(false);
+        }
         /* per il punteggio, ma per ora lo commento */
 
         /*public void Setup (int score){
@@ -27,7 +32,7 @@ namespace Minigioco2
 
         public void ExitButton()
         {
-            //SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

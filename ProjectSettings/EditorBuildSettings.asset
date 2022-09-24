@@ -10,5 +10,8 @@ EditorBuildSettings:
     guid: 6ab17f29e5c1cd54d81a3c0a64385d73
   - enabled: 1
     path: Assets/Scenes/Minigioco1.unity
-    guid: d02a4f0867a4c12498f835320d417362
+    guid: 5cb185d8f0f0f91469857df9a33d280b
+  - enabled: 1
+    path: Assets/Scenes/Minigioco2.unity
+    guid: cd0389e70dbee9444960ae07d8bb9e96
   m_configObjects: {}
