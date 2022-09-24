@@ -10,4 +10,6 @@ public class csDestroyEffect : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    
 }
