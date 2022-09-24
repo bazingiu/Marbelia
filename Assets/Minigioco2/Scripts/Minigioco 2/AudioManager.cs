@@ -7,16 +7,11 @@ namespace Minigioco2 {
     {
         public static AudioManager instance;
  
-        // Utilizza le caratteristiche della classe sound che ci consente di inserire varie info per i nostri suoni
         public Sound[] sounds;
 
         void Awake()
         {
             instance = this;
-        }
-
-        void Start()
-        {
             foreach (Sound s in sounds)
             {
                 s.source = gameObject.AddComponent<AudioSource>();
@@ -29,9 +24,15 @@ namespace Minigioco2 {
             Play("Background");
         }
 
+        void Start()
+        {
+            
+        }
+
         public void StopMusic()
         {
             Stop("Background");
+            Play("GameOver");
         }
 
         public void Play(string name)
@@ -47,7 +48,13 @@ namespace Minigioco2 {
 
         public void Stop(string name)
         {
-            Debug.Log(name);
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("Sound: " + name + "not found!");
+                return;
+            }
+            s.source.Stop();
         }
     }
 }
