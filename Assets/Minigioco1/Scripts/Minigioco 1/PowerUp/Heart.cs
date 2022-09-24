@@ -27,6 +27,11 @@ public class Heart : PowerUp
         print(health);
         PlayerHealt.instance.setHealth(health);
         healthBar.SetHealth(health);
+        StartCoroutine(PickUp());
+    }
+    public IEnumerator PickUp()
+    { 
+        yield return new WaitForSeconds(1);
         Destroy(gameObject); 
     }
 

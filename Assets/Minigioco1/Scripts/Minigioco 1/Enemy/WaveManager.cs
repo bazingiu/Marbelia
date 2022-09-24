@@ -1,5 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // CONTROLLARE SE FUNZIONA BENE IL SISTEMA DI SPAWN 
 public class WaveManager : MonoBehaviour
@@ -26,6 +28,8 @@ public class WaveManager : MonoBehaviour
     public float waveCountdown; 
 
     private float searchCountdown = GameData.searchCountdown; 
+    
+    public WinScript win;
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -66,9 +70,7 @@ public class WaveManager : MonoBehaviour
 
         if(nextWave + 1 > waves.Length - 1)
         {
-            nextWave = 0; 
-            // Va in loop ma aggiungeremo qui il codice per dire che sei riuscito a completare
-            //Aggiungere schermata di vittoria!!!!
+            win.display();
             Debug.Log("Completed all waves");
         }
         else
