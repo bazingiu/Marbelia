@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseGameScript : MonoBehaviour
 {
-   public static PauseGameScript instance;
+    public static PauseGameScript instance;
+    public GunManager gunManager;
 
    void Start()
    {
@@ -22,7 +23,7 @@ public class PauseGameScript : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None; 
         gameObject.SetActive(true);
-        // print(gameObject);
+        gunManager.disableShoot();
     }
 
     public void CursorMode()
@@ -31,6 +32,7 @@ public class PauseGameScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false; 
         gameObject.SetActive(false);
+        gunManager.enableShoot();
     }
 
     // Fa tornare alla partita
