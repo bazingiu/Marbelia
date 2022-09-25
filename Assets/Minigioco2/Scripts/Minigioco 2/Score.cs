@@ -42,7 +42,6 @@ namespace Minigioco2
             yield return new WaitForSeconds(duration);
             player.invicible = false;
             invicible.gameObject.SetActive(false);
-
         }
         void setInvicibleActive()
         {

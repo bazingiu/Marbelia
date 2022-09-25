@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor.UI;
 using UnityEngine.Events;
 
 namespace Minigioco2
@@ -13,7 +10,7 @@ namespace Minigioco2
         [Header("Volume Setting")]
         [SerializeField] private Text volumetTextValue = null;
         [SerializeField] private Slider volumeSlider = null;
-        [SerializeField] private float defaultVolume = 0.5f;
+        [SerializeField] private float defaultVolume = 0.2f;
         [SerializeField] GameObject menu;
         UnityEvent m_MyEvent;
 

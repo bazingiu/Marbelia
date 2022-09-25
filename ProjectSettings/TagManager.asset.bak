@@ -4,18 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Gun
   - PowerUp
-  - PowerUpObject
-  - mp5
-  - Undefined
-  - WeaponsManager
-  - Enemy
-  - Object
-  - Tutorial
-  - MainMenu
-  - Win
-  - GameOver
   layers:
   - Default
   - TransparentFX
@@ -25,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Enemy
-  - Object
-  - WhatIsGround
-  - WhatIsPlayer
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
