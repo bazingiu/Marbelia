@@ -22,6 +22,7 @@ public class Heart : PowerUp
     {
         health = PlayerHealt.instance.getCurrentHealt();
         health += value;
+        if(health > 100) health = 100; 
         disappearEffect();
         disactivePowerUp();
         print(health);
