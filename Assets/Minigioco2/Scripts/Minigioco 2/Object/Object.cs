@@ -29,13 +29,5 @@ namespace Minigioco2
                 gameObject.SetActive(false);
             }
         }
-
-        /*private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.layer == 8){
-                collision.gameObject.GetComponent<Player>().addPoints(points);
-                gameObject.SetActive(false);
-            }
-        }*/
     }
 }

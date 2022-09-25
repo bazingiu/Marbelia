@@ -13,12 +13,6 @@ namespace Minigioco2
         {
             GameObject.FindGameObjectWithTag("GameOver").SetActive(false);
         }
-        /* per il punteggio, ma per ora lo commento */
-
-        /*public void Setup (int score){
-            gameObject.SetActive(true);
-            pointsText.text = score.ToString() + " POINTS";
-        }*/
 
         public void Setup()
         {
@@ -27,7 +21,7 @@ namespace Minigioco2
 
         public void RestartButton()
         {
-            SceneManager.LoadScene("Minigioco 2");
+            SceneManager.LoadScene("Minigioco2");
         }
 
         public void ExitButton()

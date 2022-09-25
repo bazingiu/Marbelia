@@ -19,27 +19,8 @@ namespace Minigioco2
 
         void Start()
         {
-            //spawnObjects();
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         }
-
-        /*public void spawnObjects(){
-            destroyObjects();
-            int randomItem = 0;
-            GameObject toSpawn;
-
-            float screenY;
-            Vector2 pos;
-            for (int i =0; i<enemyLength; i++){
-                randomItem = Random.Range(0,enemyList.Count);
-                toSpawn = enemyList[randomItem];
-
-                screenY = Random.Range(-2,7);
-                pos = new Vector2(3, screenY);
-
-                Instantiate(toSpawn, pos, toSpawn.transform.rotation);
-            }
-        }*/
 
         private void destroyObjects()
         {
@@ -81,7 +62,7 @@ namespace Minigioco2
                 enemyCounter = 0;
                 for (int i = enemyCounter; i < enemyLength; i++)
                 {
-                    if (enemyList[i].transform.position.x < -1)
+                    if (enemyList[i].transform.position.x < -13)
                     {
                         enemyList[i].SetActive(false);
                         break;

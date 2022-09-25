@@ -63,7 +63,7 @@ namespace Minigioco2
             objectCounter = 0;
             for (int i = objectCounter; i < objectLength; i++)
             {
-                if (objectList[i].transform.position.x < -1)
+                if (objectList[i].transform.position.x < -13)
                 {
                     objectList[i].SetActive(false);
                     break;
@@ -96,18 +96,6 @@ namespace Minigioco2
                     }
                 }
             }
-
-            /*
-            for (int i = objectCounter; i<objectLength; i++){
-                if (!objectList[i].activeInHierarchy){
-                    objectCounter = i+1;
-                    toSpawn = objectList[i];
-                    screenY = Random.Range(-1,5);
-                    pos = new Vector2(3, screenY);
-                    Instantiate(toSpawn, pos, toSpawn.transform.rotation);
-                    break;
-                }
-            }*/
         }
     }
 }
