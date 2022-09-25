@@ -10,7 +10,6 @@ public class Intro : MonoBehaviour
 	{
         into = GameObject.FindGameObjectWithTag("into") ;
         into.SetActive(true);
-
 	}
 
 	public void ButtonClicked()
