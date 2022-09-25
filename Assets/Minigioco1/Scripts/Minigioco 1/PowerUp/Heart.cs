@@ -15,7 +15,7 @@ public class Heart : PowerUp
     {
         if(other.CompareTag("Player"))
         {   
-            effect(30);
+            effect(50);
         }
     }
     void effect(int value)

@@ -1025,8 +1025,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1753879978}
   - component: {fileID: 1753879980}
-  - component: {fileID: 1753879979}
   - component: {fileID: 1753879981}
+  - component: {fileID: 1753879979}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: MainMenu
@@ -1068,12 +1068,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.79607844}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c70a8c26b5357a946ae29811f82a841d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 254907097cadfe34ba175e93aef00dfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9579922, b: 0.9579922, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
