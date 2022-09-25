@@ -14,11 +14,8 @@ TagManager:
   - Object
   - Tutorial
   - MainMenu
-<<<<<<< HEAD
   - Win
-=======
   - GameOver
->>>>>>> 5d771c95edb409f7d7b03daced464bc49d0b4db8
   layers:
   - Default
   - TransparentFX
