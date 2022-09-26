@@ -11,7 +11,6 @@ namespace Minigioco2
         public Player player;
         public Text scoreText;
         public Text invicible;
-        private int isValid = 0;
         private float currentTime = 0.0f;
 
         private int maxPoint = 20;

@@ -4,12 +4,10 @@ public class RandomSpawn : MonoBehaviour
 {
     public Transform [] spawnPoint;
     public GameObject[] PowerUp;
-    int counter;
 
     void Start()
     {
         SpawnObject();
-        counter = 0;
     }
 
     void Update()

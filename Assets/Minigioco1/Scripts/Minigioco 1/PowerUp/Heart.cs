@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Heart : PowerUp
 {
-    public HealthBar healthBar;
     private int health;
     
     public override void Start()
@@ -32,8 +31,6 @@ public class Heart : PowerUp
         disappearEffect();
 
         PlayerHealt.instance.setHealth(health);
-        healthBar.SetHealth(health);
-
         Destroy(gameObject); 
     }
 

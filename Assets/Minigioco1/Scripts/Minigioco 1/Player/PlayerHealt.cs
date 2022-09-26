@@ -12,6 +12,7 @@ public class PlayerHealt : MonoBehaviour
     public int maxHealth = GameData.maxHealth;
     public int currentHealth;
     public HealthBar healthBar;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -36,6 +37,8 @@ public class PlayerHealt : MonoBehaviour
 
     public void setHealth(int healt)
     {
+        print(healt);
         currentHealth = healt; 
+        healthBar.SetHealth(currentHealth);
     }
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-// CONTROLLARE SE FUNZIONA BENE IL SISTEMA DI SPAWN 
 public class WaveManager : MonoBehaviour
 {
     public enum SpawnState {SPAWNING, WAITING, COUNTING};
