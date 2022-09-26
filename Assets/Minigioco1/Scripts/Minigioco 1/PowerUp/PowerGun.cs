@@ -23,7 +23,6 @@ public class PowerGun : PowerUp
 
     public void effect()
     {
-        print("effect");
         StartCoroutine(PickUp());
     }
 
@@ -35,14 +34,12 @@ public class PowerGun : PowerUp
 
         weaponsmanager.GetComponent<WeaponsManager>().SwitchWeapon(1);
 
-        print("inizio effetto");
         // Wait x amount of seconds
         yield return new WaitForSeconds(duration);
 
         // Reverse the effect on our player
         weaponsmanager.GetComponent<WeaponsManager>().SwitchWeapon(0);
 
-        print("fine effetto");
         effect_control = 0; 
         Destroy(gameObject); 
     }

@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4985641036379652994}
-  - component: {fileID: 5283872580600125832}
+  - component: {fileID: 5099040977840387025}
   - component: {fileID: 1660989487261672934}
   m_Layer: 0
   m_Name: Heart
@@ -111,7 +111,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 1}
---- !u!114 &5283872580600125832
+--- !u!114 &5099040977840387025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -18,7 +18,6 @@ public class WinScript : MonoBehaviour
     void Start()
     {
         win = GameObject.FindGameObjectWithTag("Win");
-        print(win);
         win.SetActive(false);
     }
 	public void display() 

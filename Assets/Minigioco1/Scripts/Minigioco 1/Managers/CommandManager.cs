@@ -7,7 +7,6 @@ public class CommandManager : MonoBehaviour
     public bool pauseOn;
     void Start()
     {
-        print(PlayerPrefs.GetInt("loaded"));
         if (!PlayerPrefs.HasKey("loaded"))
         {
             PlayerPrefs.SetInt("loaded", 0);

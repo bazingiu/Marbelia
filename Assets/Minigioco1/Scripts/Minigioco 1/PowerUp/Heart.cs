@@ -7,6 +7,7 @@ public class Heart : PowerUp
 {
     public HealthBar healthBar;
     private int health;
+    
     public override void Start()
     {
         print("Spowned heart");
@@ -15,6 +16,7 @@ public class Heart : PowerUp
     {
         if(other.CompareTag("Player"))
         {   
+            gameObject.SetActive(false);
             effect(50);
         }
     }
@@ -22,17 +24,16 @@ public class Heart : PowerUp
     {
         health = PlayerHealt.instance.getCurrentHealt();
         health += value;
-        if(health > 100) health = 100; 
+        if(health > 100)
+        {
+            health = 100; 
+        } 
+
         disappearEffect();
-        disactivePowerUp();
-        print(health);
+
         PlayerHealt.instance.setHealth(health);
         healthBar.SetHealth(health);
-        StartCoroutine(PickUp());
-    }
-    public IEnumerator PickUp()
-    { 
-        yield return new WaitForSeconds(1);
+
         Destroy(gameObject); 
     }
 

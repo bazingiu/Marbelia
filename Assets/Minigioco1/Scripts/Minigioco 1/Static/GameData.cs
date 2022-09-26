@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GameData
 {
     // Wave Manager
-    public static float timeBetweenWaves = 10;
+    public static float timeBetweenWaves = 5;
     public static float searchCountdown = 1f;
 
     // Mouse Look

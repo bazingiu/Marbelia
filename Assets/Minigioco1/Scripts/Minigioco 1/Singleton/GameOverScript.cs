@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     public static GameOverScript instance;
+
+    public GunManager gunManager;
     public Text pointsText;
     void Start()
     {
@@ -19,15 +21,16 @@ public class GameOverScript : MonoBehaviour
     public void Setup()
     {
         Cursor.visible = true;
+        gunManager.disableShoot();
         Cursor.lockState = CursorLockMode.None; 
         int score = PointManager.instance.getScore();
-        print("Score: " + score);
         gameObject.SetActive(true);
         pointsText.text = score.ToString() + " POINTS";
     }
 
     public void RestartButton()
     {   
+        gunManager.enableShoot();
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

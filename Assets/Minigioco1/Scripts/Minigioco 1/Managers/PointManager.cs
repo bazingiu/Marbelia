@@ -9,10 +9,10 @@ public class PointManager : MonoBehaviour
     public Text highscoreText;
 
     int score = 0;
-    int highscore = 0; 
+    int highscore; 
 
     void Awake()
-    {
+    {   
         instance = this;
     }
 
@@ -31,7 +31,6 @@ public class PointManager : MonoBehaviour
     public void AddPoints(int pointsToAdd)
     {
         score += pointsToAdd;
-        print(score);
         scoreText.text = score.ToString() + " POINTS";
         if(highscore < score)
         {

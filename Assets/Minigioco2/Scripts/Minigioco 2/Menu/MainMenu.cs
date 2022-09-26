@@ -10,7 +10,7 @@ namespace Minigioco2
         [Header("Volume Setting")]
         [SerializeField] private Text volumetTextValue = null;
         [SerializeField] private Slider volumeSlider = null;
-        [SerializeField] private float defaultVolume = 0.2f;
+        [SerializeField] private float defaultVolume = 0.5f;
         [SerializeField] GameObject menu;
         UnityEvent m_MyEvent;
 
